@@ -1,16 +1,27 @@
 <?php
 
-namespace App\Controller;
+class LabController extends AbstractController
+{
+    public function planifyLab()
+    {
+        $inputJson = $_POST['inputJson'] ?? null;
+        $data = [
+            "inputJson" => $inputJson
+        ];
 
-use App\Classes\Sample;
-use App\Classes\Technician;
-use App\Classes\Equipment;
-use App\Classes\ScheduleEntry;
-use App\Classes\Metrics;
+        if ($inputJson) {
+            $decoded = json_decode($inputJson, true);
 
-class LabController {
+            if (json_last_error() === JSON_ERROR_NONE) {
+                
+            } else {
+                $data["error"] = "JSON invalide : " . json_last_error_msg();
+            }
+        }
 
-    public function planifyLab(): array {
-
+        $result = $data;
+        $this->render("home.html.twig", [
+            "result" => $result
+        ]);
     }
 }

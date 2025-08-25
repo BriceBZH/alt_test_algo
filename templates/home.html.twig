@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Planification Laboratoire</title>
+</head>
+<body>
+    <h1>Planification Laboratoire</h1>
+
+    <form method="post">
+        <label for="inputJson">JSON des échantillons, techniciens et équipements :</label>
+        <textarea name="inputJson" id="inputJson">{{ inputJson|default('') }}</textarea>
+        <br>
+        <button type="submit">Lancer planning</button>
+    </form>
+
+    {% if result is defined %}
+        <h2>Résultat</h2>
+        <pre>{{ result|json_encode(constant('JSON_PRETTY_PRINT')) }}</pre>
+    {% endif %}
+</body>
+</html>
