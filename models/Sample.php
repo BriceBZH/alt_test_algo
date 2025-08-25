@@ -1,7 +1,7 @@
 <?php
 
 class Sample {
-    public function __construct(public string $id, private string $type, private string $priority, private int $analysisTime, private datetime $arrivalTime, private string $patientId) {
+    public function __construct(public string $id, public string $type, public string $priority, public int $analysisTime, public Datetime $arrivalTime, public string $patientId) {
         $this->id = $id;
         $this->type = $type;
         $this->priority = $priority;
@@ -9,5 +9,5 @@ class Sample {
         $this->arrivalTime = $arrivalTime;
         $this->patientId = $patientId;
     }
-    
+
 }

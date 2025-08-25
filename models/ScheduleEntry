@@ -2,7 +2,7 @@
 
 class ScheduleEntry {
 
-    public function __construct(public string $sampleId, private string $technicianId, private string $equipmentId, private datetime $startTime, private datetime $endTime, private string $priority) {
+    public function __construct(public string $sampleId, public string $technicianId, public string $equipmentId, public Datetime $startTime, public Datetime $endTime, public string $priority) {
         $this->sampleId = $sampleId;
         $this->technicianId = $technicianId;
         $this->equipmentId = $equipmentId;
@@ -10,5 +10,5 @@ class ScheduleEntry {
         $this->endTime = $endTime;
         $this->priority = $priority;
     }
-    
+
 }
