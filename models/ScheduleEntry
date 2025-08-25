@@ -1,0 +1,14 @@
+<?php
+
+class ScheduleEntry {
+
+    public function __construct(public string $sampleId, private string $technicianId, private string $equipmentId, private datetime $startTime, private datetime $endTime, private string $priority) {
+        $this->sampleId = $sampleId;
+        $this->technicianId = $technicianId;
+        $this->equipmentId = $equipmentId;
+        $this->startTime = $startTime;
+        $this->endTime = $endTime;
+        $this->priority = $priority;
+    }
+    
+}
